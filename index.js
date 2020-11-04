@@ -17,7 +17,8 @@ Do the following:
 
    HINT: no function required
 */
-
+let votingAge = 22
+if (votingAge >= 18)(console.log(true))
 
 
 /*
@@ -30,8 +31,12 @@ Do the following:
 
    HINT: no function required
 */
-
-
+let var1 = 3;
+let var2 = 10;
+if (var1 < var2) {
+    var1 = var2;
+}
+console.log(var1)
 
 
 
@@ -46,7 +51,9 @@ Do the following:
    HINT: look up the Number method
 */
 
+let year = Number("1999")
 
+console.log(year)
 
 
 /*
@@ -58,11 +65,12 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
-  }
 
+function multiply(num1, num2) {
+    return num1 * num2
+}
 
+console.log(multiply(10, 3))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -74,11 +82,12 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+
+function dogYears(num1) {
+    return num1 * 7
 }
 
-
+console.log(dogYears(10))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -105,38 +114,87 @@ Use the hungryDog function and feeding requirements below to do the following:
      7 - 12 months 4% of their body weight
     
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
-*/  
+*/
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
-  }
+function hungryDog(weight, age) {
+    if (age >= 1) {
+        if (weight <= 5) {
+            return weight * .05
+        } else if (weight <= 10) {
+            return weight * .04
+        } else if (weight <= 15) {
+            return weight * .03
+        } else if (weight > 15) {
+            return weight * .02
+        }
+    } else if (age <= 4 / 12 && age >= 2 / 12) {
+        return weight * .10
+    } else if (age <= 7 / 12) {
+        return weight * .05
+    } else if (age <= 1) {
+        return weight * .04
+    }
+}
 
-
+console.log(hungryDog(12, 3))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 // Rock, Paper, Scissors - Let's play against the computer!
 /*
-Create a global variable that randomly generates the computer's choice
-Use Math.random to determine the computers choice (Math.random gives a random number between 0 and 1)
-
 Use the game function below to do the following:
-  1. Receive 2 parameters the user's choice and the computer's choice
-  2. Return whether the user won, lost, or tied based on these rules of the game described below
-   - win should return "you win!"
-   - lose should return "you lose!"
-   -tie should return "it's a tie"
+  1. Receive a string that represents the user's choice (either "rock", "paper", or "scissors")
+  2. Use Math.random to determine the computers choice (Math.random gives a random number between 0 and 1)
+  3. Return whether the user won, lost, or tied based on these rules of the game described below
   
   RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
   
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
+// let compChoice = Math.random
+// if (compChoice <= .33) {
+//     console.log("rock")
+// } else if (compChoice <= .66) {
+//     console.log("paper")
+// } else if (compChoice <= 1) {
+//     console.log("scissors")
+// }
 
-function game(user, computer){
-    /*add your code here*/
+function game(userChoice) {
+    let compChoice = Math.random()
+    if (compChoice <= .33) {
+        compChoice = "rock"
+    } else if (compChoice <= .66) {
+        compChoice = "paper"
+    } else if (compChoice <= 1) {
+        compChoice = "scissors"
+    }
+    // console.log(compChoice)
+    if (userChoice === compChoice) {
+        return "It's a Tie!"
+    } else if (userChoice = "rock") {
+        if (compChoice = "scissors") {
+            return "You Win!"
+        } else {
+            return "You Lose!"
+        }
+    } else if (userChoice = "paper") {
+        if (compChoice = "rock") {
+            return "You Win"
+        } else {
+            return "You Lose"
+        }
+    } else if (userChoice = "scissors") {
+        if (compChoice = "paper") {
+            return "You Win!"
+        } else {
+            return "You Lose"
+        }
+    }
+
 }
-  
-  
+
+console.log(game("paper"))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -149,11 +207,10 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
-
-
+function miles(numK) {
+    return numK * 0.62
+}
+console.log(miles(300))
 
 //Task 5b - Feet to CM
 /*
@@ -163,10 +220,10 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
- 
+function feet(numCm) {
+    return numCm * .03
+}
+console.log(feet(500))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -179,10 +236,12 @@ Using the annoyingSong function below do the following:
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
-
+function annoyingSong(startNum) {
+    for (let i = startNum; i > 0; i--) {
+        console.log(`"${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall"`)
+    }
+}
+console.log(annoyingSong(10))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -198,16 +257,28 @@ Using the grade function below do the following:
    60-69 =  D 
    below 60 = F
 */
-  
-function grade(/*add your code here*/){
-    /*add your code here*/
-  }
-  
-  
-  
-  
 
-/*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
+function grade(score) {
+    if (score < 60) {
+        return "F"
+    } else if (score < 70) {
+        return "D"
+    } else if (score < 80) {
+        return "C"
+    } else if (score < 90) {
+        return "B"
+    } else {
+        return "A"
+    }
+
+}
+
+
+console.log(grade(50))
+console.log(grade(92))
+console.log(grade(66))
+console.log(grade(81))
+    /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
 //Vowel Counter - How many vowels are there?
 /*
@@ -219,20 +290,36 @@ Using the vowelCounter function below do the following:
   HINT - try looking up the .includes() method
 */
 
-
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+function vowelCounter(string) {
+    let count = 0
+    for (let item = 0; item < string.length; item++) {
+        if (string[item].toLowerCase().includes("a")) {
+            count += 1;
+            // console.log(count);
+        } else if (string[item].toLowerCase().includes("e")) {
+            count += 1;
+            // console.log()
+        } else if (string[item].toLowerCase().includes("i")) {
+            count += 1;
+        } else if (string[item].toLowerCase().includes("o")) {
+            count += 1;
+        } else if (string[item].toLowerCase().includes("u")) {
+            count += 1;
+        }
+    }
+    return count
 }
+console.log(vowelCounter("Finally figured it out!"));
 
 
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-function foo(){
+function foo() {
     console.log('its working');
     return 'bar';
 }
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-export default{
+export default {
     foo,
     multiply,
     dogYears,
